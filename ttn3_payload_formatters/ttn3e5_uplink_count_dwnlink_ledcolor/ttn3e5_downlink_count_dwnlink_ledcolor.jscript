@@ -1,0 +1,28 @@
+// downlink decoder ttn v3 for ttn3e5_uplink_count_dwnlink_ledcolor.ino
+//
+// based on led color example of:
+// https://www.thethingsindustries.com/docs/integrations/payload-formatters/javascript/downlink/
+//
+var colors = ["OFF", "RED", "BLUE", "GREEN"];
+
+function encodeDownlink(input) {
+  return {
+    bytes: [colors.indexOf(input.data.color)],
+    fPort: 1,
+  };
+}
+
+function decodeDownlink(input) {
+  switch (input.fPort) {
+  case 1:
+    return {
+      data: {
+        color: colors[input.bytes[0]]
+      }
+    }
+  default:
+    return {
+      errors: ["unknown FPort"]
+    }
+  }
+}
