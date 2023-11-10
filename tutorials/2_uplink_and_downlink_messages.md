@@ -1,7 +1,5 @@
 # Uplink and Downlink messages
 
-[TOC]
-
 ## Introduction
 
 In LoRaWAN networks, Class A end nodes are low-power IoT devices that can send uplink messages and receive Downlink messages.

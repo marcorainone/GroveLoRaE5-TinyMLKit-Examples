@@ -1,7 +1,5 @@
 # Connecting an End-Node to the LoraWan TTN Network
 
-[TOC]
-
 ## What is a LoraWan end device?
 
 A LoRaWAN end device is an IoT device that uses LoRaWAN technology to communicate over long distances with low power consumption.
