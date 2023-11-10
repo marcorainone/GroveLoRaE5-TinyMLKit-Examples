@@ -1,5 +1,7 @@
 # Uplink and Downlink messages
 
+[TOC]
+
 ## Introduction
 
 In LoRaWAN networks, Class A end nodes are low-power IoT devices that can send uplink messages and receive Downlink messages.
@@ -127,7 +129,6 @@ As ‘Formatter type’ select ‘Custom Javascript formatter’
 Insert the downlink formatter to decode the uplink messages sent by the arduino sketch ttn3e5_uplink_count_dwnlink_LEDcolor.ino
 
 ![img](./img/uplink_and_downlink_messages/lu137324la6e_tmp_10a8632c6c43f373.png)
-
 
 ### Javascript uplink decoder
 

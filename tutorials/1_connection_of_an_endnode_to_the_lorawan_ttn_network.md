@@ -1,17 +1,22 @@
 # Connecting an End-Node to the LoraWan TTN Network
 
-## What is a LoraWan end-node?
+[TOC]
 
-A LoRaWAN end node is an IoT device that uses LoRaWAN technology to communicate over long distances with low power consumption.
+## What is a LoraWan end device?
 
-From a hardware point of view, end nodes are made up of several key components that can vary according to the application and the needs of the IoT device, however we can identify the presence of these essential parts:
+A LoRaWAN end device is an IoT device that uses LoRaWAN technology to communicate over long distances with low power consumption.
+
+From a hardware point of view, end devices are made up of several key components that can vary according to the application and the needs of the IoT device, however we can identify the presence of these essential parts:
 
 1. **Microcontroller**: This is a low power consumption unit that manages sensor data collection, processing and communication. It is often an element that integrates various communication interfaces and/or sensors to minimize external wiring, simplify data acquisition and the development process of IoT applications.
+
 2. **LoRa Module**: An essential component for LoRaWAN communication, often designed to minimize power consumption. It includes the LoRa radio transmitter and receiver, which allow the node to send and receive data on the LoRa radio frequency.
+
 3. **Antenna**: An antenna is required for the transition from the  guided wave  in the transceiver to the unguided way in the air. The antenna is used for both transmission and reception.
+
 4. **Sensors**: End nodes are often equipped with one or more sensors for collecting environmental data or other information. Depending on the application, these sensors can include temperature, humidity, pressure sensors, accelerometers, light sensors, etc.,.
 
-The end node of our project consists of these modules:
+The end device of our project consists of these modules:
 
 1. **Arduino Nano 33 Ble Sense Microcontroller**: This element also integrates sensors such as accelerometer, gyroscope, magnetometer, humidity sensor, temperature sensor, etc.
 
@@ -41,7 +46,9 @@ In this example, the following have been connected:
 
 - the Arduino Nano 33 BLE Sense microcontroller on the carrier board
 
-- there is a Grove - Sunlight Sensor, connected on the carrier in the I2C connector at the top left ![img](./img/connection_of_an_endnode_to_the_lorawan_ttn_network/lu16116ah7z_tmp_4ad29ebb9bbf4418.png)
+- there is a Grove - Sunlight Sensor, connected on the carrier in the I2C connector at the top left
+
+  ![img](./img/connection_of_an_endnode_to_the_lorawan_ttn_network/lu16116ah7z_tmp_4ad29ebb9bbf4418.png)
 
   https://wiki.seeedstudio.com/Grove-Sunlight_Sensor/
 
@@ -57,7 +64,7 @@ On the bottom right, there are also other connectors on the carrier board that c
 
 ## Steps to Perform Node Registration on The Things Network
 
-Once the components of the end node have been assembled, it is necessary to register it on TTN3.
+Once the components of the end device have been assembled, it is necessary to register it on TTN3.
 
 Below I list the various steps, also providing various references on the web that deepen the individual topics:
 
@@ -127,9 +134,9 @@ AT+ID
 +ID: AppEui, 80:00:00:00:00:00:00:06
 ```
 
-When configuring an end node device in a LoRaWAN network, the following identifiers are common:
+When configuring an end device device in a LoRaWAN network, the following identifiers are common:
 
-1. **DevEUI (Device EUI)**: The DevEUI, or Device EUI, is a unique identifier assigned to the end node device during production or initial configuration. It is a 64-bit number that serves to uniquely identify the device within the LoRaWAN network. The DevEUI is fixed and does not change during the lifecycle of the device. It is used for identification purposes and is known to both the device and the network.
+1. **DevEUI (Device EUI)**: The DevEUI, or Device EUI, is a unique identifier assigned to the end device device during production or initial configuration. It is a 64-bit number that serves to uniquely identify the device within the LoRaWAN network. The DevEUI is fixed and does not change during the lifecycle of the device. It is used for identification purposes and is known to both the device and the network.
 2. **AppEUI (Application EUI**): The AppEUI, or Application EUI, is another unique 64-bit identifier assigned to the device during setup. The AppEUI is used to identify the application that the device is paired with. The AppEUI is known to both the device and the application. In a LoRaWAN context, the DevEUI and AppEUI are used together to determine the application to which a device will send data.
 3. **DevAddr (Device Address)**: The DevAddr, or Device Address, is a 32-bit address assigned to the device during the join phase with the LoRaWAN network. During the Over-The-Air Activation (OTAA) authentication process, the device receives a DevAddr from the network. This address is used to direct the device within the network and to determine the LoRaWAN gateway to send data to. The DevAddr can change when the device reconfigures its connection to the network.
 
